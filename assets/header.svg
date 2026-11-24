@@ -1,0 +1,159 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 260" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0507" />
+      <stop offset="45%" stop-color="#140a0e" />
+      <stop offset="100%" stop-color="#1f0f14" />
+    </linearGradient>
+
+    <!-- Crimson Neon Gradients -->
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF4B63" />
+      <stop offset="50%" stop-color="#FF7588" />
+      <stop offset="100%" stop-color="#FFA8B4" />
+    </linearGradient>
+
+    <linearGradient id="cyberBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF4B63" stop-opacity="0.8" />
+      <stop offset="50%" stop-color="#3D141D" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#FF7588" stop-opacity="0.8" />
+    </linearGradient>
+
+    <linearGradient id="badgeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#D7263D" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#2D1118" stop-opacity="0.6" />
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="subtleGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Grid Pattern -->
+    <pattern id="cyberGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255, 75, 99, 0.05)" stroke-width="1" />
+      <circle cx="40" cy="40" r="1" fill="rgba(255, 117, 136, 0.15)" />
+    </pattern>
+  </defs>
+
+  <style>
+    .title-text {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Bricolage Grotesque", "Inter", Roboto, sans-serif;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+    .mono-text {
+      font-family: "JetBrains Mono", "Fira Code", "Courier New", monospace;
+    }
+    .pulse-dot {
+      animation: pulse 2.5s infinite;
+    }
+    @keyframes pulse {
+      0% { r: 4px; opacity: 1; }
+      50% { r: 7px; opacity: 0.4; }
+      100% { r: 4px; opacity: 1; }
+    }
+  </style>
+
+  <!-- Outer Card Frame -->
+  <rect x="2" y="2" width="946" height="256" rx="16" fill="url(#bgGrad)" stroke="url(#cyberBorder)" stroke-width="1.5" />
+
+  <!-- Background Grid -->
+  <rect x="3" y="3" width="944" height="254" rx="15" fill="url(#cyberGrid)" />
+
+  <!-- Ambient Light Orbs -->
+  <circle cx="820" cy="50" r="120" fill="#FF4B63" opacity="0.08" filter="blur(50px)" />
+  <circle cx="80" cy="210" r="90" fill="#D7263D" opacity="0.06" filter="blur(40px)" />
+
+  <!-- Decorative Network Constellation in Background (Top-Right) -->
+  <g opacity="0.45" stroke="#FF5A6E" stroke-width="1" fill="#FFA3AE">
+    <line x1="720" y1="40" x2="790" y2="70" opacity="0.4" />
+    <line x1="790" y1="70" x2="880" y2="45" opacity="0.3" />
+    <line x1="790" y1="70" x2="760" y2="130" opacity="0.4" />
+    <line x1="760" y1="130" x2="840" y2="150" opacity="0.4" />
+    <line x1="840" y1="150" x2="900" y2="105" opacity="0.3" />
+    <line x1="840" y1="150" x2="870" y2="210" opacity="0.3" />
+    
+    <circle cx="720" cy="40" r="2.5" />
+    <circle cx="790" cy="70" r="3.5" filter="url(#subtleGlow)" />
+    <circle cx="880" cy="45" r="2" />
+    <circle cx="760" cy="130" r="3" />
+    <circle cx="840" cy="150" r="4" filter="url(#subtleGlow)" />
+    <circle cx="900" cy="105" r="2.5" />
+    <circle cx="870" cy="210" r="3" />
+  </g>
+
+  <!-- Top Left Terminal Prompt / Status Badge -->
+  <g transform="translate(48, 36)">
+    <rect x="0" y="0" width="285" height="28" rx="14" fill="url(#badgeGrad)" stroke="#FF5A6E" stroke-width="1" stroke-opacity="0.5" />
+    <circle cx="16" cy="14" r="4.5" fill="#2FBF71" class="pulse-dot" />
+    <text x="32" y="18" fill="#F6EFF1" font-size="11" font-weight="600" class="mono-text" letter-spacing="0.05em">
+      SYSTEM STATUS: ACTIVE &amp; MONITORING
+    </text>
+  </g>
+
+  <!-- Main Hero Title -->
+  <g transform="translate(48, 108)">
+    <text x="0" y="0" fill="#F6EFF1" font-size="44" class="title-text">
+      Muhammad Ali <tspan fill="url(#accentGrad)" filter="url(#subtleGlow)">Saim</tspan>
+    </text>
+    <text x="0" y="30" fill="#B5A6AB" font-size="15" font-weight="500" class="mono-text" letter-spacing="0.04em">
+      Cyber Security Student <tspan fill="#FF5A6E">/</tspan> SOC Automation <tspan fill="#FF5A6E">/</tspan> AI Security Engineer
+    </text>
+  </g>
+
+  <!-- Bio Highlight Line -->
+  <g transform="translate(48, 172)">
+    <text x="0" y="0" fill="#E2D7DA" font-size="13.5" class="title-text" font-weight="400">
+      Building autonomous multi-agent SOC pipelines, anti-spoofing biometrics &amp; zero-trust web architectures.
+    </text>
+  </g>
+
+  <!-- Bottom Badges / Metrics Pills -->
+  <g transform="translate(48, 202)">
+    <!-- Pill 1: CTF -->
+    <g transform="translate(0, 0)">
+      <rect x="0" y="0" width="168" height="26" rx="6" fill="#1B1014" stroke="#4A1E27" stroke-width="1" />
+      <text x="12" y="17" fill="#FF5A6E" font-size="11" font-weight="700" class="mono-text">🚩 37/37 FLAGS</text>
+      <text x="100" y="17" fill="#A89B9F" font-size="11" class="mono-text">34.9K PTS</text>
+    </g>
+
+    <!-- Pill 2: Education -->
+    <g transform="translate(178, 0)">
+      <rect x="0" y="0" width="162" height="26" rx="6" fill="#1B1014" stroke="#4A1E27" stroke-width="1" />
+      <text x="12" y="17" fill="#FF7588" font-size="11" font-weight="600" class="mono-text">🎓 IUB BS CYBERSEC</text>
+    </g>
+
+    <!-- Pill 3: Certification -->
+    <g transform="translate(350, 0)">
+      <rect x="0" y="0" width="166" height="26" rx="6" fill="#1B1014" stroke="#4A1E27" stroke-width="1" />
+      <text x="12" y="17" fill="#2FBF71" font-size="11" font-weight="600" class="mono-text">🛡️ CCEP &amp; CNSF</text>
+      <text x="114" y="17" fill="#A89B9F" font-size="11" class="mono-text">VERIFIED</text>
+    </g>
+
+    <!-- Pill 4: Production -->
+    <g transform="translate(526, 0)">
+      <rect x="0" y="0" width="170" height="26" rx="6" fill="#1B1014" stroke="#4A1E27" stroke-width="1" />
+      <text x="12" y="17" fill="#F2B134" font-size="11" font-weight="600" class="mono-text">⚡ 6 SHIPPED SYSTEMS</text>
+    </g>
+  </g>
+
+  <!-- Modern Corner Tech Brackets -->
+  <path d="M 16 32 L 16 16 L 32 16" fill="none" stroke="#FF4B63" stroke-width="2" opacity="0.7" />
+  <path d="M 934 32 L 934 16 L 918 16" fill="none" stroke="#FF4B63" stroke-width="2" opacity="0.7" />
+  <path d="M 16 228 L 16 244 L 32 244" fill="none" stroke="#FF4B63" stroke-width="2" opacity="0.7" />
+  <path d="M 934 228 L 934 244 L 918 244" fill="none" stroke="#FF4B63" stroke-width="2" opacity="0.7" />
+</svg>
